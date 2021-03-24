@@ -3,6 +3,8 @@ const http = require('http');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
+const _data = require('./lib/data');
+const handlers = require('./lib/handlers');
 
 const server = http.createServer((req, res) => {
     
@@ -57,16 +59,7 @@ server.listen(config.port, () => {
     console.log(`Server je pokrenut na portu ${config.port} i ime okruzenja je ${config.envName}`);
 });
 
-const handlers = {};
-
-handlers.ping = (data, callback) => {
-    callback(200);
-};
-
-handlers.notFound = (data, callback) => {
-    callback(404);
-};
-
 const router = {
-    'ping': handlers.ping
+    'ping': handlers.ping,
+    'users': handlers.users
 }
