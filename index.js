@@ -1,13 +1,34 @@
 // Zavisisnosti
 const http = require('http');
+const https = require('https');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
-const _data = require('./lib/data');
 const handlers = require('./lib/handlers');
+const fs = require('fs');
 
-const server = http.createServer((req, res) => {
-    
+const httpServer = http.createServer((req, res) => {
+    unifiedServer(req, res);
+});
+
+httpServer.listen(config.httpPort, () => {
+    console.log(`Server je pokrenut na portu ${config.httpPort} i ime okruzenja je ${config.envName}`);
+});
+
+const httpsServerOptions = {
+    'key': fs.readFileSync('./https/key.pem'),
+    'cert': fs.readFileSync('./https/cert.pem')
+};
+
+const httpsServer = https.createServer(httpsServerOptions, (req, res) => {
+    unifiedServer(req, res);
+});
+
+httpsServer.listen(config.httpsPort, () => {
+    console.log(`Server je pokrenut na portu ${config.httpsPort} i ime okruzenja je ${config.envName}`);
+});
+
+const unifiedServer = (req, res) => {
     const parsedURL = url.parse(req.url, true);
 
     const path = parsedURL.pathname;
@@ -53,13 +74,10 @@ const server = http.createServer((req, res) => {
         });
 
     });
-});
-
-server.listen(config.port, () => {
-    console.log(`Server je pokrenut na portu ${config.port} i ime okruzenja je ${config.envName}`);
-});
+};
 
 const router = {
     'ping': handlers.ping,
-    'users': handlers.users
+    'users': handlers.users,
+    'tokens': handlers.tokens
 }
