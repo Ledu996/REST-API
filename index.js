@@ -5,7 +5,12 @@ const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
 const handlers = require('./lib/handlers');
+const helpers = require('./lib/helpers');
 const fs = require('fs');
+
+helpers.sendTwilioSMS('5005550333', 'Hello World!', (err) => {
+    console.log('Greska je ovo: ' + err);
+});
 
 const httpServer = http.createServer((req, res) => {
     unifiedServer(req, res);
