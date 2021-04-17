@@ -1,0 +1,9 @@
+{
+    "id":"00vniv71pdwahfu9w6bk",
+    "userPhone":"0625517844",
+    "protocol":"http",
+    "url":"/checks?phone=0602213212",
+    "method":"post",
+    "successCodes":[200,201,202],
+    "timeoutSecond":4
+}
