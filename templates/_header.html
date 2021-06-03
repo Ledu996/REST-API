@@ -12,31 +12,34 @@
     <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
     <link type="text/css" rel="stylesheet" href="public/app.css">
     <script type="text/javascript" src="public/app.js"></script>
+    <script src="https://kit.fontawesome.com/56dbddec0c.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body class="{body.class}">
     <div class="wrapper">
         <header class="header">
-            <a href="/" class="logo"></a>
             <ul>
-                <li>
-                    <a href="/">Home</a>
+                <li id="home-menu"><a href="/">Home</a></li>
+                <li class="loggedOut" id="register-menu"><a href="/account/create"> Signup </a></li>
+                <li class="loggedOut"id="login-menu"><a href="/session/create"> Login </a></li>
+                
+                <li class="loggedIn" id="dashboard-menu" tabindex="0"><a href="/checks/all"> Dashboard </a>
+                    <ul class="sub-menu">
+                        <li class="loggedIn"><a href="/checks/create" >Create a new check </a></li>
+                        <li class="loggedIn"><a href="/checks/edit"> Edit a check </a></li>
+                    </ul>
                 </li>
-                <li class="loggedOut">
-                    <a href="/account/create">Signup</a>
-                </li>
-                <li class="loggedOut">
-                    <a href="/session/create">Login</a>
-                </li>
-                <li class="loggedIn">
-                    <a href="/checks/all">Dashboard</a>
-                </li>
-                <li class="loggedIn">
-                    <a href="/account/edit">Account Setting</a>
-                </li>
-                <li class="loggedIn">
-                    <a href="#">Logout</a>
+                
+                <li class="loggedIn" id="accEdit-menu"><a href="/account/edit"> Account Setting </a></li>
+                
+                <li class="loggedIn" id="delete-menu" tabindex="0"><a href="/session/delete"> Logout </a>
+                    <ul class="sub-menu">
+                        <li><a href="/account/deleted"> Delete account </a></li>
+                    </ul>
                 </li>
             </ul>
-        </header>
-        <main class="content">
+        </header>    
+
+        
+        <main>

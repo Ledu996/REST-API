@@ -1,29 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
 *{
     box-sizing: border-box;
 }
-
-.logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+body{
+    background: #f6f5f7;
 }
+
 
 header {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: #fff6;
+    box-shadow: 0 14px 28px rgba(211, 206, 206, 0.25), 0 10px 10px rgba(177, 174, 174, 0.22);
+}
+
+
+header ul, header li{
+    list-style: none;
+    padding-right: 2px;
+    display: inline-block;
+    padding: 4px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+}
+
+#home-menu, #register-menu, #login-menu, #dashboard-menu, #accEdit-menu, #delete-menu {
+    position: relative;
+}
+#delete-menu {
+    padding-right: 10px;
+}
+.sub-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3 ease-in-out 0s, visibility 0s linear 0.3, z-index 0s linear 0.1s;
+    background: #fff6;
+}
+
+.sub-menu li:hover {
+    cursor: pointer;
+    background-color: #fff1;
+}
+
+#dashboard-menu:focus .sub-menu,
+#dashboard-menu:focus-within .sub-menu,
+#dashboard-menu:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+
+#delete-menu:focus .sub-menu,
+#delete-menu:focus-within .sub-menu,
+#delete-menu:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 25px;
+}
+
+.strelice {
+    padding: 80px;
+}
+.strelice i {
+    color:rgba(56, 55, 55, 0.8);
+    font-size: 55px;
+    margin: 55px 5px;
+}
+
+.strelice i:active, .strelice i:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.user-box {
+    /*margin: 10px;
+    //margin: -32px;*/
+    padding: 3px;
+    border: 1px solid #000;
+    position: relative;
+    text-align: center;
+}
+
+
+.user-picture {
+    width: 200px;
+    height: 200px;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background: #292F36;
+    color: #fff;
+}
+
+
+#company-contribution {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(22, 15, 15);
+    text-align: center;
+    margin: 2px;
+}
+
+
+#company-contribution  div span{
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+#company-contribution  div ul{
+    list-style-type: none;
+    padding: 10px 20px;
+}
+
+#company-contribution div ul li {
+    padding: 2px;
+    letter-spacing: 1px;
+}
+
+#company-contribution div ul li:hover{
+    cursor: pointer;
+}
+
+#social-container{
+    border: 1px solid #fff;
+    margin: 7px 5px;
+}
+
+
+#social-container i {
+    padding: 4px;
+}
+
+#social-container:hover {
+    cursor: pointer;
+}
+
+#connection form {
+    margin: 12px;
+}
+
+#address-container1 i {
+    padding: 0 4px;
+    word-spacing: 10px;
+}
+
+#address-container2  {
+    padding: 0 1px;
+    margin: 12px;
+}
+
+#health-bar {
+    border: 1px solid #fff;
+    background: #fff;
+}
+
+
+#rights {
+    text-align: center;
+    background: #000;
+}
+
+
+/*
+    Registracija
+*/
+
+h1{
+    font-weight: bold;
     margin: 0;
 }
 
-ul, li, a {
-    list-style-type: none;
-    color: white ;
-    text-decoration: none;
-    display: inline-block;
-    padding-right: 5px; 
+
+#register-container {
+    display: flex;
+    justify-content: center;
+    margin: 150px;
 }
 
-.wrapper {
-    background-color: rgb(94, 91, 91);
+.register__form-container form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    width: 700px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
 }
+
+.register__form-container form input {
+    border-radius: 2px;
+    text-align: center;
+    background: #f5f3f4;
+    border: #f5f3f4 solid 1px;
+    font-size: 14px;
+    padding: 12px;
+    margin: 5px;
+}
+
+.register__form-container form button {
+    background-color: #d90429;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 25%;
+    height: 25px;
+    margin: 10px;
+    margin-left: 230px;
+}
+
+
+/*Log in*/
+
+
+#login-container {
+    font-family: 'Pattaya', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    background-color: #f6f5f7;
+    width: 600px;
+    margin: 190px 450px;
+    border-radius: 25px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+#login__content-container {
+    width: 450px;
+}
+
+#login__content-container button{
+    border-radius: 30%;
+    width: 40px;
+    height: 40px;
+}
+
+#login__content-container i {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#facebook-button{
+    background-color: blue;
+    border: 1px solid #fff;    
+}
+
+#google-button{
+    background-color: red;
+    border: 1px solid red;
+}
+
+
+#linkedin-button{
+    background-color: blue;
+    border: 1px solid blue;
+}
+
+#facebook-button:active, #facebook-button:hover, #google-button:active, #google-button:hover, #linkedin-button:active, #linkedin-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+#login__content-container form {
+    font-family: 'Pattaya', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+}
+
+
+#login__content-container form input {
+    margin: 5px;
+    border-radius: 15px;
+    outline: none;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Pattaya', sans-serif;
+}
+
+#login__content-container form button {
+    background-color:red;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+    margin: 10px 170px;
+    font-family: 'Pattaya', sans-serif;
+}
+
+
+#login__content-container form button:active, #login__content-container form button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+/*
+    Account Edit
+*/
+
+
+#account__edit-container {
+    display: flex;
+    justify-content: center;
+    margin: 120px;
+    text-align: center;
+}
+
+#account__edit-container div form {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0 50px;
+    border-radius: 10px;
+    width: 700px;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+
+#account__edit-container div form input {
+    margin: 5px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 12px;
+    background: #f5f3f4;
+    border: #f5f3f4 solid 1px;
+}
+
+
+#account__edit-container div form button {
+    background-color: #d90429;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 10px;
+    width: 25%;
+    height: 25px;
+    margin-left: 230px;
+}
+
+#account__edit-container div form button:hover, #account__edit-container div form button:active {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/*
+    Checks List
+*/
+
+
+
+#checks__list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 100px;
+}
+
+#checks__list-container table {
+    border-collapse: collapse;
+    border-spacing: 1px;
+    margin: 25px 0;
+    font: size 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#checks__list-container table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+        border: 1px solid #fff;
+}
+
+#checks__list-container table thead tr th {
+    margin: 10 15px;
+    padding: 10px 15px;
+}
+
+#checks__list-container table tbody tr td {
+    margin: 15px 12px;
+    padding: 5px 15px;
+}
+
+
+/*
+    Create check and Edit check
+*/
+
+
+#check__create-container, #check__edit-container {
+    width: 1203px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 150px;
+    background: #f6f5f7;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Pattaya', sans-serif;
+}
+
+
+
+#checks__create-content, #checkCreate, #checkCreate__edit-content, #checksEdit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Pattaya', sans-serif;
+}
+
+
+#checkCreate div select, #checkCreate input, #checksEdit div select, #checksEdit input {
+    outline: none;
+    font-family: 'Pattaya', sans-serif;
+}
+
+
+#checkCreate input, #checksEdit input {
+    margin : 5px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+
+
+#checkCreate button, #checksEdit button {
+    width: 172px;
+    background-color: #d90429;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+    font-family: 'Pattaya', sans-serif;
+}
+
+
+#checksCreate button:hover, #checksCreate button:active, #checksEdit button:hover, #checksEdit button:active {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*
+    Account delete
+*/
+
+#accDel-container {
+    width: 1203px;
+    height: 450px;
+    font-family: 'Montserrat', sans-serif;
+    background: #f6f5f7;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin: 150px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+#message-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+#info-container{
+    margin: 0 50px;
+}
+
+#home-container{
+    background: #5f4b8bff; /*palevioletred;*/
+    color: white;
+    font-size: 14px;
+    padding: 50px 5px;
+    width: 450px;
+}
+#home-container h2{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 35px;
+}
+
+#home-container p {
+    font-size: 14px;
+    padding: 10px 22px;
+}
+
+#home-container button {
+    margin-left: 100px;
+    margin-top: 15px;
+    border: solid white 1px;
+    border-radius: 25px;
+    background-color: #5f4b8bff;
+    width: 35px;
+}
+
+#home-container button i {
+    color: #fff;
+}
+
+#home-container button i a {
+    text-decoration: none;
+}
+
+#home-container div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+}
+
+
+#sing_up-container{
+    background: #990011FF;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#sing_up-container h2{
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#sing_up-container form{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+
+
+#sing_up-container form input {
+    background: #990011FF;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    margin: 3px 50px;
+    text-align: center;
+    color: #fff;
+    outline: none;
+}
+
+
+#sing_up-container form input::placeholder{
+    color: #fff;
+}
+
+#sing_up-container button {
+    background: #990011FF;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 12px;
+    width: 25%;
+    margin: 10px 170px;
+
+}
+
+

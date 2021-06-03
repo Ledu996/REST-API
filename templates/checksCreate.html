@@ -1,0 +1,21 @@
+<div id="check__create-container">
+    <div id="check__create-content">
+        <h2>Create a check</h2>
+            <form id="checkCreate" action="/api/check" method="POST">
+                <div>
+                    <label for="protocol">Choose protocol</label>
+                    <select id="protocol">
+                        <option value="http" name="http" required>http</option>
+                        <option value="https" name="https" required>https</option>
+                    </select>
+                </div>
+                
+                <input type="text" placeholder="url" name="url" required>
+                <input type="text" placeholder="method" name="method" required>
+                <input type="text" placeholder="succesCodes" name="succesCodes" required>
+                <input type="text" placeholder="timeoutSecond" name="timeoutSecond" required>
+                <button type="submit">Create</button>
+                <div class="formError"></div>
+            </form>
+        </div>
+    </div>

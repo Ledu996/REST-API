@@ -1,0 +1,19 @@
+    <div id="register-container">
+        <div class="register__form-container">
+            <form id="signup" action="/api/users" method="POST"> 
+                <h2>Create an Account</h2>
+                
+                <input type="text" id="firstName" name="firstName" placeholder="firstName" required autocomplete="off" />
+                <input type="text" id="lastName" name="lastName" placeholder="lastName" required autocomplete="off" />
+                <input type="text" id="phone" name="phone" placeholder="phone" required autocomplete="tel" />
+                <input type="password" id="password" name="password" placeholder="password" required autocomplete="new-password" />
+                
+                <div>
+                    <label for="agreement">Tearms of licence</label>
+                    <input type="checkbox" name="agreement" id="agreement" >
+                </div>
+                    <button type="submit">Sing up</button>
+                <div class="formError"></div>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,13 @@
+<div id="account__edit-container">
+    <div id="form-container">
+        <form  id="edit-account" action="/api/users" method="PUT">
+            <h2>Edit an Account</h2>
+                <input type="text" placeholder="phone" name="phone" id="phone" required  autocomplete="tel" />
+                <input type="text" placeholder="firstName" name="firstName" id="firstName" autocomplete="off" />
+                <input type="text" placeholder="lastName" name="lastName" id="lastName" autocomplete="off"/>
+                <input type="text" placeholder="password" name="password"id="password" autocomplete="off" />
+            <button>Edit</button>
+            <div class="formError"></div>
+        </form>
+    </div>
+</div>

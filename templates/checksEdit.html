@@ -1,0 +1,21 @@
+<div id="check__edit-container">
+    <div id="check__edit-content">
+        <h2>Edit Check</h2>
+            <form id="checksEdit" action="/api/checks" method="PUT">
+                <div>
+                    <label for="protocol">Choose protocol</label>
+                    <select id="protocol">
+                        <option value="http" name="http">http</option>
+                        <option value="https" name="https">https</option>
+                    </select>
+                </div>
+                
+                <input type="text" placeholder="url" name="url">
+                <input type="text" placeholder="method" name="method">
+                <input type="text" placeholder="succesCodes" name="succesCodes">
+                <input type="text" placeholder="timeoutSecond" name="timeoutSecond">
+                <button type="submit">Edit</button>
+                <div class="formError"></div>
+            </form>
+        </div>
+    </div>

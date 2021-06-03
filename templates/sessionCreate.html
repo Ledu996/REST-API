@@ -1,0 +1,16 @@
+    <div id="login-container">
+        <div id="login__content-container">
+            <div><h2>Log in</h2></div>
+            <div id="icon-container">
+                <button id="facebook-button"><i class="fab fa-facebook-f"></i></button>
+                <button id="google-button"><i class="fab fa-google-plus-g"></i></button>
+                <button id="linkedin-button"><i class="fab fa-linkedin-in"></i></button>
+            </div>
+            <form id="sessionCreate" action="/api/tokens" method="POST">
+                <input type="tel" name="phone" placeholder="phone" required />
+                <input type="password" name="password" placeholder="password" required />
+                <button type="submit">Sign in</button>
+                <div class="formError"></div>
+            </form>
+        </div>
+    </div>
